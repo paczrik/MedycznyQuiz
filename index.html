@@ -438,7 +438,7 @@
     </div>
 
     <script>
-        const DB_VERSION = "v2"; 
+        const DB_VERSION = "v4"; 
 
         window.addEventListener("DOMContentLoaded", () => {
             const savedVersion = localStorage.getItem("mediquiz_db_version");
@@ -503,22 +503,157 @@
                 id: 6,
                 category: "Anatomia",
                 subcategory: "Kręgosłup",
-                question: "Jak nazywa się pierwszy kręg szyjny (C1), który dźwiga czaszkę?",
-                options: ["Obrotnik (Axis)", "Kręg wystający (Vertebra prominens)", "Kręg szczytowy (Atlas)", "Kość krzyżowa"],
+                question: "Wyrostkiem nieparzystym w kręgach kręgosłupa jest wyrostek:",
+                options: ["stawowy dolny", "stawowy górny", "kolczysty", "poprzeczny"],
                 correct: 2,
-                explanation: "Atlas (kręg szczytowy) nie posiada trzonu i bezpośrednio łączy się z kłykciami potylicznymi czaszki."
+                explanation: "Wyrostek kolczysty jest skierowany ku tyłowi i jest nieparzysty."
             },
             {
                 id: 7,
                 category: "Anatomia",
                 subcategory: "Kręgosłup",
-                question: "Który kręg szyjny (C2) posiada charakterystyczny wyrostek zębowaty (dens)?",
-                options: ["Atlas", "Obrotnik (Axis)", "Trzeci kręg szyjny", "Pierwszy kręg piersiowy"],
-                correct: 1,
-                explanation: "Obrotnik (Axis) posiada wyrostek zębowaty, wokół którego obraca się atlas wraz z czaszką."
+                question: "Ile wyrostków zawiera typowy kręg?",
+                options: ["3", "5", "7", "9"],
+                correct: 2,
+                explanation: "Typowy kręg składa się z dwóch wyrostków stawowych górnych i dolnych, dwóch wyrostków poprzecznych i wyrostka kolczystego."
             },
             {
                 id: 8,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Wcięcia kręgowe górne i dolne sąsiadujących kręgów tworzą:",
+                options: ["trzon kręgu", "łuk kręgu", "kanał kręgowy", "otwór międzykręgowy"],
+                correct: 3,
+                explanation: "Otwór międzykręgowy tworzą wcięcia kręgowe górne i dolne sąsiadujących kręgów."
+            },
+            {
+                id: 9,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Ile jest kręgów szyjnych?",
+                options: ["5", "6", "7", "8"],
+                correct: 2,
+                explanation: "Jest 7 kręgów szyjnych."
+            },
+            {
+                id: 10,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Cechą charakterystyczną kręgów szyjnych jest:",
+                options: ["obecność otworów wyrostków poprzecznych", "obecność trzonu kręgu", "obecność wyrostka kolczystego", "brak wyrostków stawowych górnych"],
+                correct: 0,
+                explanation: "Otwory wyrostków poprzecznych występują tylko w kręgach szyjnych."
+            },
+            {
+                id: 11,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Cechą charakterystyczną kręgów szyjnych jest:",
+                options: ["obecność otworów wyrostków poprzecznych", "obecność trzonu kręgu", "rozdwojony wyrostek kolczysty", "poprawne są odpowiedzi 1 i 3"],
+                correct: 3,
+                explanation: "Cechy charakterystyczne kręgów szyjnych to: otwory w wyrostkach poprzecznych, obecność rozdwojonego wyrostka kolczystego."
+            },
+            {
+                id: 12,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "W otworze wyrostków poprzecznych zaczynając od kręgu C6 przebiega/ją:",
+                options: ["rdzeń kręgowy", "tętnica kręgowa", "żyły kręgowe", "poprawne są odpowiedzi 2 i 3"],
+                correct: 3,
+                explanation: "W otworze wyrostka poprzecznego zaczynając od kręgu C6 przebiegają: tętnica kręgowa, przeważnie 2 żyły kręgowe oraz splot nerwów współczulnych."
+            },
+            {
+                id: 13,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "W otworze wyrostków poprzecznych zaczynając od kręgu C6 przebiega/ją:",
+                options: ["splot nerwów współczulnych", "tętnica kręgowa", "żyły kręgowe", "poprawne są odpowiedzi 1, 2 i 3"],
+                correct: 3,
+                explanation: "W otworze wyrostka poprzecznego zaczynając od kręgu C6 przebiegają: tętnica kręgowa, przeważnie 2 żyły kręgowe oraz splot nerwów współczulnych."
+            },
+            {
+                id: 14,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "W otworze wyrostków poprzecznych zaczynając od kręgu C6 przebiega/ją:",
+                options: ["splot nerwów przywspółczulnych", "tętnica kręgowa", "żyła kręgowa", "poprawne są odpowiedzi 1, 2 i 3"],
+                correct: 1,
+                explanation: "W otworze wyrostka poprzecznego zaczynając od kręgu C6 przebiegają: tętnica kręgowa, przeważnie 2 żyły kręgowe oraz splot nerwów współczulnych."
+            },
+            {
+                id: 15,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Cechą charakterystyczną kręgu C1 jest:",
+                options: ["obecność łuku przedniego i tylnego", "brak wyrostka kolczystego", "brak typowego trzonu kręgu", "poprawne są odpowiedzi 1, 2 i 3"],
+                correct: 3,
+                explanation: "Cechy charakterystyczne kręgu C1 to: brak trzonu, obecność dwóch łuków kręgu, brak typowego wyrostka kolczystego."
+            },
+            {
+                id: 16,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Cechą charakterystyczną kręgu C2 jest:",
+                options: ["obecność wyrostka kolczystego", "obecność otworów wyrostków poprzecznych", "obecność zęba", "brak wyrostka kolczystego"],
+                correct: 2,
+                explanation: "Kręg C2 ma wydłużony trzon, który tworzy ząb."
+            },
+            {
+                id: 17,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Kręgów piersiowych jest:",
+                options: ["10", "11", "12", "13"],
+                correct: 2,
+                explanation: "Jest 12 kręgów piersiowych."
+            },
+            {
+                id: 18,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Cechą charakterystyczna kręgów piersiowych jest:",
+                options: ["obecność trzonu", "rozdwojony wyrostek kolczysty", "obecność dołków żebrowych", "obecność otworów międzykręgowych"],
+                correct: 2,
+                explanation: "Służą one do połączenia żeber z kręgosłupem."
+            },
+            {
+                id: 19,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Kręgi piersiowe mają wyrostki stawowe ustawione w płaszczyźnie:",
+                options: ["strzałkowej", "czołowej", "poziomej", "pionowej"],
+                correct: 1,
+                explanation: "Wyrostki stawowe kręgów piersiowych są ustawione w płaszczyźnie czołowej."
+            },
+            {
+                id: 20,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Cechą charakterystyczna kręgów lędźwiowych jest:",
+                options: ["obecność trzonu", "obecność wyrostka suteczkowatego", "obecność dołków żebrowych", "obecność otworów wyrostków poprzecznych"],
+                correct: 1,
+                explanation: "Cechą charakterystyczną kręgów lędźwiowych jest obecność wyrostków suteczkowatych na bocznej stronie wyrostków stawowych górnych."
+            },
+            {
+                id: 21,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Kość krzyżowa zrasta się w wieku:",
+                options: ["10 lat", "15 lat", "25 lat", "50 lat"],
+                correct: 2,
+                explanation: "Zrasta się w wieku 20-25 lat."
+            },
+            {
+                id: 22,
+                category: "Anatomia",
+                subcategory: "Kręgosłup",
+                question: "Kość krzyżowa - wskaż prawdziwe stwierdzenie:",
+                options: ["Grzebień krzyżowy pośrodkowy znajduje się po stronie przedniej kości krzyżowej.", "Powierzchnia uchowata kości krzyżowej łączy się z kością guziczną.", "Kanał krzyżowy biegnie wzdłuż całej kości krzyżowej.", "Grzebienie krzyżowe boczne powstały ze zrośnięcia wyrostków kolczystych."],
+                correct: 2,
+                explanation: "Kanał krzyżowy biegnie wzdłuż całej kości krzyżowej i kończy się rozworem krzyżowym."
+            },
+            {
+                id: 23,
                 category: "Fizjologia",
                 subcategory: "All",
                 question: "Która struktura w sercu jest naturalnym rozrusznikiem serca (głównym ośrodkiem bodźcotwórczym)?",
@@ -527,7 +662,7 @@
                 explanation: "Węzeł zatokowo-przedsionkowy (SA node) położony w ścianie prawego przedsionka generuje impulsy elektryczne najszybciej, nadając rytm całemu sercu."
             },
             {
-                id: 9,
+                id: 24,
                 category: "Fizjologia",
                 subcategory: "All",
                 question: "Jaki jest główny narząd odpowiedzialny za regulację gospodarki wodno-elektrolitowej oraz wydalanie mocznika?",
