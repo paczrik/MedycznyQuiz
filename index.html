@@ -368,13 +368,11 @@
             <p>Interaktywny panel powtórkowy dla studentów medycyny</p>
         </header>
 
-        <!-- Panel postępu (licznik opanowanych pytań) -->
         <div class="progress-panel" id="progress-panel">
             <span id="progress-counter">Opanowane: 0 / 0 pytań</span>
             <button class="reset-progress-btn" onclick="resetProgress()">Resetuj postęp</button>
         </div>
 
-        <!-- 1. Ekran główny -->
         <div class="menu-screen active" id="menu-main">
             <div class="nick-box">
                 <label for="nickname" style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text-muted);">Twój Nick / Pseudonim:</label>
@@ -389,7 +387,6 @@
             </div>
         </div>
 
-        <!-- 2. Ekran podkategorii (Anatomia) -->
         <div class="submenu-screen" id="menu-sub">
             <button class="back-btn" onclick="goToMainCatalog()">← Wróć do wyboru działów</button>
             <h2>Wybierz podkategorię z Anatomii:</h2>
@@ -399,11 +396,10 @@
                 <button class="category-btn" onclick="startQuiz('Anatomia', 'Brzuch')">🩺 Brzuch</button>
                 <button class="category-btn" onclick="startQuiz('Anatomia', 'Miednica')">🦴 Miednica</button>
                 <button class="category-btn" onclick="startQuiz('Anatomia', 'Szyja')">🗣️ Szyja</button>
-                <button class="category-btn" onclick="startQuiz('Anatomia', 'Kregoslup')">🦴 Kręgosłup</button>
+                <button class="category-btn" onclick="startQuiz('Anatomia', 'Kręgosłup')">🦴 Kręgosłup</button>
             </div>
         </div>
 
-        <!-- 3. Ekran quizu -->
         <div class="quiz-screen" id="quiz-screen">
             <div class="quiz-header-nav">
                 <button class="quit-btn" onclick="confirmQuit()">← Przerwij quiz</button>
@@ -428,7 +424,6 @@
             <button class="next-btn" id="next-btn" onclick="nextQuestion()">Następne pytanie</button>
         </div>
 
-        <!-- 4. Ekran wyniku -->
         <div class="result-screen" id="result-screen">
             <h2>Koniec quizu! 🎉</h2>
             <p id="result-user-info" style="font-weight: 600; color: var(--primary); margin-bottom: 5px;"></p>
@@ -443,6 +438,21 @@
     </div>
 
     <script>
+        const DB_VERSION = "v2"; 
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const savedVersion = localStorage.getItem("mediquiz_db_version");
+            if (savedVersion !== DB_VERSION) {
+                localStorage.removeItem("mediquiz_mastered");
+                localStorage.setItem("mediquiz_db_version", DB_VERSION);
+            }
+
+            const savedNick = localStorage.getItem("mediquiz_nick");
+            if (savedNick) {
+                nickInput.value = savedNick;
+            }
+        });
+
         const allQuestions = [
             {
                 id: 1,
@@ -492,7 +502,7 @@
             {
                 id: 6,
                 category: "Anatomia",
-                subcategory: "Kregoslup",
+                subcategory: "Kręgosłup",
                 question: "Jak nazywa się pierwszy kręg szyjny (C1), który dźwiga czaszkę?",
                 options: ["Obrotnik (Axis)", "Kręg wystający (Vertebra prominens)", "Kręg szczytowy (Atlas)", "Kość krzyżowa"],
                 correct: 2,
@@ -501,7 +511,7 @@
             {
                 id: 7,
                 category: "Anatomia",
-                subcategory: "Kregoslup",
+                subcategory: "Kręgosłup",
                 question: "Który kręg szyjny (C2) posiada charakterystyczny wyrostek zębowaty (dens)?",
                 options: ["Atlas", "Obrotnik (Axis)", "Trzeci kręg szyjny", "Pierwszy kręg piersiowy"],
                 correct: 1,
@@ -602,13 +612,6 @@
                 startQuiz(currentCategory, currentSubcategory);
             }
         }
-
-        window.addEventListener("DOMContentLoaded", () => {
-            const savedNick = localStorage.getItem("mediquiz_nick");
-            if (savedNick) {
-                nickInput.value = savedNick;
-            }
-        });
 
         function getValidatedNick() {
             let nick = nickInput.value.trim();
